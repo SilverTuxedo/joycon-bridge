@@ -2,7 +2,7 @@
 #include <memory>
 #include <string>
 #include "Buffer.h"
-#include "hidapi/hidapi.h"
+#include "hidapi/hidapi/hidapi.h"
 
 
 namespace joy_con_bridge
