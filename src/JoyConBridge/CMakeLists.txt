@@ -33,10 +33,10 @@ set(HEADER_FILES
 # Create a static library (you can also choose SHARED for a dynamic library)
 add_library(JoyConBridge STATIC ${SRC_FILES} ${HEADER_FILES})
 
-# Include directories
-target_include_directories(JoyConBridge PRIVATE ${CMAKE_SOURCE_DIR})
+# Include the JoyConBridge source directory
+target_include_directories(JoyConBridge PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Include hidapi
-target_include_directories(JoyConBridge PRIVATE ${CMAKE_SOURCE_DIR}/hidapi)
+target_include_directories(JoyConBridge PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/hidapi/hidapi)
 
 target_link_libraries(JoyConBridge PRIVATE hidapi)
