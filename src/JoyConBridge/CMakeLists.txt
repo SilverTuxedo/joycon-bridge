@@ -37,6 +37,6 @@ add_library(JoyConBridge STATIC ${SRC_FILES} ${HEADER_FILES})
 target_include_directories(JoyConBridge PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Include hidapi
+add_subdirectory(hidapi)
 target_include_directories(JoyConBridge PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/hidapi/hidapi)
-
 target_link_libraries(JoyConBridge PRIVATE hidapi)
