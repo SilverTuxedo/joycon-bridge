@@ -9,7 +9,7 @@ HidError::HidError(hid_device* device)
 	: m_error(strings::wideToChar(std::wstring(hid_error(device))))
 {}
 
-char const* HidError::what() const
+char const* HidError::what() const noexcept
 {
 	return m_error.data();
 }
@@ -22,12 +22,12 @@ HidOpenError::HidOpenError()
 	: HidError(nullptr)
 {}
 
-char const* HidOpenError::what() const
+char const* HidOpenError::what() const noexcept
 {
 	return "The device can't be opened.";
 }
 
-char const* JoyConNotResponding::what() const
+char const* JoyConNotResponding::what() const noexcept
 {
 	return "The device is not responding.";
 }
