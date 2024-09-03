@@ -1,8 +1,9 @@
 #include <algorithm>
+#include <cmath>
 #include "JoyCon.h"
 #include "command_ids.h"
 #include "exceptions.h"
-#include "hidapi.h"
+#include "hidapi/hidapi.h"
 #include "HidDevice.h"
 #include "protocol.h"
 

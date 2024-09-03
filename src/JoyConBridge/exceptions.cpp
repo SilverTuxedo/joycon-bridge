@@ -1,5 +1,5 @@
 #include "exceptions.h"
-#include "hidapi.h"
+#include "hidapi/hidapi.h"
 #include "strings.h"
 
 
