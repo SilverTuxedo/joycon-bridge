@@ -3,7 +3,7 @@
 #include "JoyCon.h"
 #include "command_ids.h"
 #include "exceptions.h"
-#include "hidapi/hidapi.h"
+#include "hidapi/hidapi/hidapi.h"
 #include "HidDevice.h"
 #include "protocol.h"
 
