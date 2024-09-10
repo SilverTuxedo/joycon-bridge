@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JoyConBridge", "JoyConBridge\JoyConBridge.vcxproj", "{275C1E01-F72F-40A2-ABC0-CF94C9A25C77}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hidapi", "JoyConBridge\hidapi\hidapi.vcxproj", "{A107C21C-418A-4697-BB10-20C3AA60E2E4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hidapi", "JoyConBridge\hidapi\windows\hidapi.vcxproj", "{A107C21C-418A-4697-BB10-20C3AA60E2E4}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pyjoyconbridge", "pyjoyconbridge\pyjoyconbridge.vcxproj", "{D1F76D08-00D0-4087-9450-B84649F6BF85}"
 EndProject

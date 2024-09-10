@@ -4,6 +4,7 @@
 
 JoyCon Bridge allows you to access the state of any connected JoyCon, including buttons, analog sticks, accelerometer and gyroscope data - all in a simple and straightforward manner.
 
+Included are Visual Studio project files and `CMakeLists.txt`. Tested on Windows and MacOS.
 
 ## C++ Example
 ```cpp
@@ -78,12 +79,28 @@ This project uses Boost.Python.
 
 If you don't want to change your environment variables, you can manually replace `$(...)` occurrences in `Boost.Python.props`.
 
+## Link with CMake
+
+Something like the following should work in your root `CMakeLists.txt`:
+
+```
+...
+
+add_subdirectory(${CMAKE_SOURCE_DIR}/JoyConBridge/src/JoyConBridge)
+target_include_directories(YourTarget PRIVATE ${CMAKE_SOURCE_DIR}/JoyConBridge/src/JoyConBridge)
+
+target_link_libraries(YourTarget
+    PRIVATE
+        ...
+        JoyConBridge
+    	...
+)
+```
 
 ## Limitations
 
 * Only Bluetooth communication is supported.
 * No support for sending rumble.
-* Windows only (can be resolved by replacing the `hidapi` version used).
 
 
 ## Special thanks
