@@ -69,6 +69,11 @@ AnalogStick JoyCon::getRightStick() const
 	return m_rightStick;
 }
 
+protocol::SensorData JoyCon::getRawSensorData() const
+{
+	return m_rawSensorData;
+}
+
 ThreeAxesSensor JoyCon::getGyroscope() const
 {
 	return m_gyroscope;
@@ -316,6 +321,8 @@ void JoyCon::updateAnalogSticks(const protocol::StandardFullInputReport* report)
 
 void JoyCon::updateSensors(const protocol::StandardFullInputReport* report)
 {
+	m_rawSensorData = report->sensorData[0];
+
 	m_accelerometer.x = static_cast<float>(report->sensorData[0].accelerometer[0]) * m_calibrationData
 	                                                                                 .accelerometerCoeff.x;
 	m_accelerometer.y = static_cast<float>(report->sensorData[0].accelerometer[1]) * m_calibrationData
