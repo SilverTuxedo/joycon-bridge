@@ -129,6 +129,8 @@ public:
 
 	AnalogStick getRightStick() const;
 
+	protocol::SensorData getRawSensorData() const;
+
 	ThreeAxesSensor getGyroscope() const;
 
 	ThreeAxesSensor getAccelerometer() const;
@@ -244,6 +246,7 @@ private:
 	ButtonsState m_buttons;
 	AnalogStick m_leftStick;
 	AnalogStick m_rightStick;
+	protocol::SensorData m_rawSensorData;
 	ThreeAxesSensor m_gyroscope;
 	ThreeAxesSensor m_accelerometer;
 	CalibrationData m_calibrationData;

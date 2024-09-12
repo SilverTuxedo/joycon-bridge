@@ -1,8 +1,9 @@
 #include <algorithm>
+#include <cmath>
 #include "JoyCon.h"
 #include "command_ids.h"
 #include "exceptions.h"
-#include "hidapi.h"
+#include "hidapi/hidapi/hidapi.h"
 #include "HidDevice.h"
 #include "protocol.h"
 
@@ -66,6 +67,11 @@ AnalogStick JoyCon::getLeftStick() const
 AnalogStick JoyCon::getRightStick() const
 {
 	return m_rightStick;
+}
+
+protocol::SensorData JoyCon::getRawSensorData() const
+{
+	return m_rawSensorData;
 }
 
 ThreeAxesSensor JoyCon::getGyroscope() const
@@ -315,6 +321,8 @@ void JoyCon::updateAnalogSticks(const protocol::StandardFullInputReport* report)
 
 void JoyCon::updateSensors(const protocol::StandardFullInputReport* report)
 {
+	m_rawSensorData = report->sensorData[0];
+
 	m_accelerometer.x = static_cast<float>(report->sensorData[0].accelerometer[0]) * m_calibrationData
 	                                                                                 .accelerometerCoeff.x;
 	m_accelerometer.y = static_cast<float>(report->sensorData[0].accelerometer[1]) * m_calibrationData

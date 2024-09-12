@@ -11,7 +11,7 @@ class JoyConError : public std::exception
 
 class JoyConNotResponding : public JoyConError
 {
-	char const* what() const override;
+	char const* what() const noexcept override;
 };
 
 class HidError : public std::exception
@@ -19,7 +19,7 @@ class HidError : public std::exception
 public:
 	explicit HidError(hid_device* device);
 
-	char const* what() const override;
+	char const* what() const noexcept override;
 
 protected:
 	std::string m_error;
@@ -36,6 +36,6 @@ class HidOpenError : public HidError
 public:
 	HidOpenError();
 
-	char const* what() const override;
+	char const* what() const noexcept override;
 };
 }
